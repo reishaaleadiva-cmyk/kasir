@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasir KASSA 2</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <span class="tag">Point of Sale</span>
+        <h1>KASSA 2</h1>
+        <p>Kasir digital profesional untuk transaksi cepat dan nota rapi.</p>
+      </div>
+      <div class="hero-meta">
+        <div>
+          <strong>Kasir</strong>
+          <span>Desk 02</span>
+        </div>
+        <div>
+          <strong>Tanggal</strong>
+          <span id="currentDate"></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="pos-grid">
+      <aside class="panel panel-left">
+        <div class="panel-title">Input Barang</div>
+        <div class="field-group">
+          <label for="itemName">Nama Barang</label>
+          <input type="text" id="itemName" placeholder="Contoh: Baju Polo" value="Baju Polo" />
+
+          <label for="price">Harga Satuan (Rp)</label>
+          <input type="number" id="price" placeholder="360000" value="360000" min="0" />
+
+          <label for="quantity">Jumlah</label>
+          <input type="number" id="quantity" placeholder="1" value="1" min="1" />
+
+          <button type="button" id="addItemBtn">Tambah ke Nota</button>
+        </div>
+
+        <div class="item-list card-sm">
+          <div class="list-title">Daftar Barang</div>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Barang</th>
+                  <th>Qty</th>
+                  <th>Subtotal</th>
+                </tr>
+              </thead>
+              <tbody id="itemsTableBody">
+                <tr><td colspan="3" class="empty">Belum ada barang</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="summary-row">
+            <span>Jumlah Item</span>
+            <strong id="itemCount">0</strong>
+          </div>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="subtotal">Rp0</strong>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="panel panel-right">
+        <div class="receipt-card">
+          <div class="receipt-header">
+            <div>
+              <span class="receipt-brand">KASSA 2</span>
+              <h2>STRUK PENJUALAN</h2>
+            </div>
+            <span id="receiptTime">--:--</span>
+          </div>
+
+          <div class="receipt-info">Toko Modern • Kasir Online</div>
+
+          <div class="divider"></div>
+          <div class="receipt-items" id="receiptItems">Tambahkan barang untuk membuat nota.</div>
+
+          <div class="receipt-total">
+            <span>Total Bayar</span>
+            <strong id="receiptTotal">Rp0</strong>
+          </div>
+
+          <label for="payment">Uang Bayar</label>
+          <input type="number" id="payment" placeholder="Contoh: 400000" min="0" />
+          <button type="button" id="payBtn">Bayar Sekarang</button>
+          <div class="receipt-change" id="changeText"></div>
+          <button type="button" id="clearBtn" class="secondary">Batal Transaksi</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html> 
